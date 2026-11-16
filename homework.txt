@@ -28,7 +28,15 @@
 
         Console.WriteLine(string.Join(", ", filterednums));
 
-        Console.WriteLine($"броят на числата: {filterednums.Count}");
-        Console.WriteLine($"сумата на числата: {filterednums.Sum()}");
+        int count = 0;
+        int sum = 0;
+        foreach (int n in filterednums)
+        {
+            count++;
+            sum += n;
+        }
+
+        Console.WriteLine($"броят на числата: {count}");
+        Console.WriteLine($"сумата на числата: {sum}");
     }
 }
