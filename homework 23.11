@@ -1,0 +1,40 @@
+        Console.WriteLine("Въведи числа: ");
+        List<int> numbers = Console.ReadLine().Split().Select(int.Parse).ToList();
+
+        Console.WriteLine("Списъкът в началото: " + string.Join(" ", numbers));
+
+        int addNumber = int.Parse(Console.ReadLine());
+        int removeNumber = int.Parse(Console.ReadLine());
+        int index = int.Parse(Console.ReadLine());
+
+        numbers.Add(addNumber);
+        Console.WriteLine("След add: " + string.Join(" ", numbers));
+
+        numbers.Insert(0, addNumber);
+        Console.WriteLine("След Insert: " + string.Join(" ", numbers));
+
+        if (numbers.Remove(removeNumber))
+        {
+            Console.WriteLine("След Remove: " + string.Join(" ", numbers));
+        }
+        else
+        {
+            Console.WriteLine("Числото не е намерено");
+        }
+
+        if (index >= 0 && index < numbers.Count)
+        {
+            numbers.RemoveAt(index);
+            Console.WriteLine("След RemoveAt: " + string.Join(" ", numbers));
+        }
+        else
+        {
+            Console.WriteLine("Невалиден индекс");
+        }
+
+        Console.WriteLine("Краен брой елементи: " + numbers.Count);
+
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            Console.WriteLine(i + ". " + numbers[i]);
+        }
